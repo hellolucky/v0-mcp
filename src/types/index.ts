@@ -5,13 +5,13 @@
 import { z } from 'zod';
 
 // v0 API Models
-export const V0Model = z.enum(['v0-1.5-md', 'v0-1.5-lg', 'v0-1.0-md']);
-export type V0Model = z.infer<typeof V0Model>;
+export const V0ModelSchema = z.enum(['v0-1.5-md', 'v0-1.5-lg', 'v0-1.0-md']);
+export type V0Model = z.infer<typeof V0ModelSchema>;
 
 // Tool Input Schemas
 export const GenerateUISchema = z.object({
   prompt: z.string().min(1, 'Prompt is required'),
-  model: V0Model.default('v0-1.5-md'),
+  model: V0ModelSchema.default('v0-1.5-md'),
   stream: z.boolean().default(false),
   context: z.string().optional(),
 });
@@ -19,7 +19,7 @@ export const GenerateUISchema = z.object({
 export const GenerateFromImageSchema = z.object({
   imageUrl: z.string().url('Valid image URL is required'),
   prompt: z.string().optional(),
-  model: V0Model.default('v0-1.5-md'),
+  model: V0ModelSchema.default('v0-1.5-md'),
 });
 
 export const ChatCompleteSchema = z.object({
@@ -27,7 +27,7 @@ export const ChatCompleteSchema = z.object({
     role: z.enum(['user', 'assistant', 'system']),
     content: z.string(),
   })),
-  model: V0Model.default('v0-1.5-md'),
+  model: V0ModelSchema.default('v0-1.5-md'),
   stream: z.boolean().default(false),
 });
 

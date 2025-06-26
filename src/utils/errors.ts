@@ -6,12 +6,19 @@ import OpenAI from 'openai';
 import { logError } from './logger.js';
 
 export enum ErrorType {
+  // eslint-disable-next-line no-unused-vars
   API_ERROR = 'API_ERROR',
+  // eslint-disable-next-line no-unused-vars
   VALIDATION_ERROR = 'VALIDATION_ERROR',
+  // eslint-disable-next-line no-unused-vars
   TIMEOUT_ERROR = 'TIMEOUT_ERROR',
+  // eslint-disable-next-line no-unused-vars
   RATE_LIMIT_ERROR = 'RATE_LIMIT_ERROR',
+  // eslint-disable-next-line no-unused-vars
   AUTHENTICATION_ERROR = 'AUTHENTICATION_ERROR',
+  // eslint-disable-next-line no-unused-vars
   NETWORK_ERROR = 'NETWORK_ERROR',
+  // eslint-disable-next-line no-unused-vars
   UNKNOWN_ERROR = 'UNKNOWN_ERROR',
 }
 

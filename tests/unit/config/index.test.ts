@@ -6,7 +6,7 @@ jest.mock('dotenv', () => ({
 }));
 
 describe('Configuration', () => {
-  let originalEnv: NodeJS.ProcessEnv;
+  let originalEnv: typeof process.env;
 
   beforeEach(() => {
     // Save original environment
