@@ -1,26 +1,26 @@
 import { describe, it, expect } from '@jest/globals';
 import {
-  V0Model,
+  V0ModelSchema,
   GenerateUISchema,
   GenerateFromImageSchema,
   ChatCompleteSchema,
 } from '../../../src/types/index.js';
 
 describe('Type Definitions', () => {
-  describe('V0Model', () => {
+  describe('V0ModelSchema', () => {
     it('should accept valid model names', () => {
       // Act & Assert
-      expect(() => V0Model.parse('v0-1.5-md')).not.toThrow();
-      expect(() => V0Model.parse('v0-1.5-lg')).not.toThrow();
-      expect(() => V0Model.parse('v0-1.0-md')).not.toThrow();
+      expect(() => V0ModelSchema.parse('v0-1.5-md')).not.toThrow();
+      expect(() => V0ModelSchema.parse('v0-1.5-lg')).not.toThrow();
+      expect(() => V0ModelSchema.parse('v0-1.0-md')).not.toThrow();
     });
 
     it('should reject invalid model names', () => {
       // Act & Assert
-      expect(() => V0Model.parse('invalid-model')).toThrow();
-      expect(() => V0Model.parse('gpt-4')).toThrow();
-      expect(() => V0Model.parse('')).toThrow();
-      expect(() => V0Model.parse(null)).toThrow();
+      expect(() => V0ModelSchema.parse('invalid-model')).toThrow();
+      expect(() => V0ModelSchema.parse('gpt-4')).toThrow();
+      expect(() => V0ModelSchema.parse('')).toThrow();
+      expect(() => V0ModelSchema.parse(null)).toThrow();
     });
   });
 
