@@ -8,8 +8,8 @@
 // Set minimal V0_API_KEY for testing before importing modules
 process.env.V0_API_KEY = 'test-key-for-basic-functionality';
 
-import { V0Tools } from './dist/mcp/tools.js';
-import { logger } from './dist/utils/logger.js';
+import { V0Tools } from '../dist/mcp/tools.js';
+import { logger } from '../dist/utils/logger.js';
 
 async function testBasicFunctionality() {
   console.log('🧪 Testing v0-mcp basic functionality...\n');
